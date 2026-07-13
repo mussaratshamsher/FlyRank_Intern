@@ -61,3 +61,8 @@ def get_random_term():
         "term": item["term"],
         "definition": item["definition"],
     }
+
+@app.get("/terms")
+def get_random_terms_alias():
+    """Alias for clients that call /terms (plural)."""
+    return get_random_term()
