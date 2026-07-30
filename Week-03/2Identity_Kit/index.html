@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mussarat Shamsher — Identity Kit</title>
+
+  <!-- Google Fonts: Playfair Display (headings) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- SVG favicon: MS monogram -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%236C5CE7'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Inter,sans-serif' font-weight='700' font-size='18' fill='%23F8F9FA'%3EMS%3C/text%3E%3C/svg%3E" />
+
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      /* 4-Color Palette */
+      --charcoal:   #2D3436;
+      --off-white:  #F8F9FA;
+      --purple:     #6C5CE7;
+      --teal:       #A0D2DB;
+
+      --font-heading: 'Playfair Display', Georgia, serif;
+      --font-body:    'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--off-white);
+      color: var(--charcoal);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ===== TYPOGRAPHY ===== */
+    h1, h2, h3, h4 {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+
+    h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); }
+    h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); }
+    h3 { font-size: clamp(1.2rem, 2vw, 1.6rem); }
+
+    p, li { font-weight: 300; font-size: clamp(0.95rem, 1.2vw, 1.1rem); }
+    .label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; }
+
+    /* ===== UTILITY ===== */
+    .container { max-width: 1040px; margin: 0 auto; padding: 0 1.5rem; }
+    .section { padding: 4rem 0; }
+    .section-title {
+      display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .section-title::after {
+      content: ''; flex: 1; height: 1px; background: var(--teal);
+    }
+    .accent { color: var(--purple); }
+
+    /* ===== HEADER / HERO ===== */
+    .hero {
+      min-height: 85vh;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 2rem 0;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, var(--purple) 0%, transparent 70%);
+      opacity: 0.04;
+      pointer-events: none;
+    }
+
+    /* Monogram Logo */
+    .monogram {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 72px; height: 72px;
+      border-radius: 16px;
+      background: var(--purple);
+      margin-bottom: 2rem;
+    }
+    .monogram svg { width: 36px; height: 36px; }
+
+    .hero-tagline {
+      font-family: var(--font-body);
+      font-weight: 400;
+      color: var(--purple);
+      margin-top: 0.5rem;
+      margin-bottom: 1.5rem;
+      font-size: clamp(1rem, 2vw, 1.25rem);
+    }
+
+    .hero-desc {
+      max-width: 560px;
+      opacity: 0.8;
+    }
+
+    .hero-meta {
+      display: flex; flex-wrap: wrap; gap: 2rem;
+      margin-top: 2.5rem; padding-top: 2rem;
+      border-top: 1px solid rgba(45, 52, 54, 0.08);
+    }
+    .hero-meta-item { display: flex; flex-direction: column; gap: 0.25rem; }
+
+    /* ===== STYLE GUIDE ===== */
+    .guide-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.75rem;
+    }
+
+    .guide-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 1.75rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .guide-card:hover {
+      box-shadow: 0 8px 28px rgba(108, 92, 231, 0.10), 0 2px 8px rgba(0,0,0,0.06);
+      transform: translateY(-3px);
+    }
+    .guide-card h3 {
+      margin-bottom: 1.25rem;
+      font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+    }
+    .guide-card p { font-size: 0.95rem; }
+    .guide-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .guide-card ul li {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .guide-card ul li .bullet {
+      color: var(--purple);
+      flex-shrink: 0;
+      font-size: 1.1rem;
+    }
+
+    /* ---- Colour Swatches ---- */
+    .color-swatches {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+    }
+    .swatch-item {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.5rem 0.65rem;
+      border-radius: 10px;
+      background: var(--off-white);
+      border: 1px solid rgba(0,0,0,0.04);
+      transition: background 0.2s ease;
+    }
+    .swatch-item:hover { background: #f0f1f3; }
+    .swatch {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      flex-shrink: 0;
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+    .swatch-label {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+    .swatch-label .name {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--charcoal);
+    }
+    .swatch-label .hex {
+      font-size: 0.65rem;
+      font-weight: 400;
+      opacity: 0.5;
+      font-family: monospace;
+    }
+
+    .color-description {
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      opacity: 0.7;
+      line-height: 1.6;
+    }
+    .color-description strong {
+      font-weight: 600;
+      opacity: 1;
+    }
+
+    /* ---- Typography Samples ---- */
+    .font-sample + .font-sample { margin-top: 1.25rem; }
+    .font-sample .usage {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      opacity: 0.45;
+      font-weight: 500;
+      margin-bottom: 0.35rem;
+    }
+    .font-sample .demo-heading {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: clamp(1.2rem, 2vw, 1.5rem);
+      color: var(--charcoal);
+    }
+    .font-sample .demo-body {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 1rem;
+      color: var(--charcoal);
+      max-width: 90%;
+    }
+
+    /* ---- Logo Variants ---- */
+    .logo-variants {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      margin-top: 1.25rem;
+    }
+    .logo-variant {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      flex: 1 0 auto;
+    }
+    .logo-box {
+      width: 64px;
+      height: 64px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.25s ease;
+    }
+    .logo-variant:hover .logo-box { transform: scale(1.08); }
+    .logo-variant .label {
+      font-size: 0.7rem;
+    }
+
+    /* ---- Two-Line Summary ---- */
+    .guide-two-liner {
+      margin-top: 2rem;
+      background: var(--charcoal);
+      color: var(--off-white);
+      padding: 1.75rem 2rem;
+      border-radius: 16px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .guide-two-liner:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(45, 52, 54, 0.15);
+    }
+    .guide-two-liner p + p { margin-top: 0.5rem; }
+    .guide-two-liner .summary-title {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: var(--teal);
+    }
+    .guide-two-liner .summary-content {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      opacity: 0.9;
+    }
+    .guide-two-liner .summary-sub {
+      font-size: 0.85rem;
+      opacity: 0.65;
+      margin-top: 0.5rem;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center; padding: 2rem 0;
+      border-top: 1px solid rgba(45, 52, 54, 0.06);
+      font-size: 0.85rem; opacity: 0.5;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 700px) {
+      .guide-grid { grid-template-columns: 1fr; }
+      .hero-meta { flex-direction: column; gap: 1rem; }
+      .section { padding: 2.5rem 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HERO ===== -->
+  <header class="hero container">
+    <div class="monogram">
+      <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="36" height="36" rx="8" fill="white" opacity="0.95"/>
+        <text x="18" y="24" text-anchor="middle"
+              font-family="'Inter',sans-serif" font-weight="700" font-size="20"
+              fill="#6C5CE7">MS</text>
+      </svg>
+    </div>
+
+    <h1>Mussarat <span class="accent">Shamsher</span></h1>
+    <p class="hero-tagline">Software Engineer &middot; AI Developer</p>
+    <p class="hero-desc">
+      Building intelligent systems with clean architecture and human-centred design.
+      Crafting the future one commit at a time.
+    </p>
+
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="label">Heading Font</span>
+        <span>Playfair Display</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="label">Body Font</span>
+        <span>Inter</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="label">Primary</span>
+        <span style="color: var(--purple);">#6C5CE7</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="label">Secondary</span>
+        <span style="color: var(--teal);">#A0D2DB</span>
+      </div>
+  </header>
+
+  <!-- ===== STYLE GUIDE ===== -->
+  <section class="section container">
+    <div class="section-title">
+      <h2>Style Guide</h2>
+    </div>
+
+    <div class="guide-grid">
+
+      <!-- Colour Palette -->
+      <div class="guide-card">
+        <h3>Colour Palette</h3>
+        <div class="color-swatches">
+          <div class="swatch" style="background:#2D3436;"></div>
+          <div class="swatch swatch-light" style="background:#F8F9FA; border-color:#ddd;">#F8F9FA</div>
+          <div class="swatch swatch-light" style="background:#6C5CE7; color:#fff;">#6C5CE7</div>
+          <div class="swatch" style="background:#A0D2DB;">#A0D2DB</div>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">
+          <strong>Charcoal</strong> #2D3436 · <strong>Off-white</strong> #F8F9FA ·<br />
+          <strong>Purple</strong> #6C5CE7 · <strong>Teal</strong> #A0D2DB
+        </p>
+      </div>
+
+      <!-- Typography -->
+      <div class="guide-card">
+        <h3>Typography</h3>
+        <div class="font-sample">
+          <p class="usage">Heading — Playfair Display, 600 weight</p>
+          <p style="font-family:var(--font-heading); font-weight:600; font-size:1.4rem;">
+            Mussarat Shamsher
+          </p>
+        </div>
+        <div class="font-sample">
+          <p class="usage">Body — Inter, 300 weight</p>
+          <p style="font-family:var(--font-body); font-weight:300; font-size:1rem;">
+            Clean, readable text for interfaces and documentation.
+          </p>
+        </div>
+
+      <!-- Logo / Monogram -->
+      <div class="guide-card">
+        <h3>Monogram Mark</h3>
+        <p style="margin-bottom: 1rem;">
+          The primary mark is a stacked <strong>MS</strong> monogram on a purple rounded square.
+        </p>
+        <div class="logo-variants">
+          <div class="logo-variant">
+            <div class="logo-box" style="background:var(--purple);">
+              <svg width="28" height="28" viewBox="0 0 36 36" fill="none">
+                <text x="18" y="24" text-anchor="middle"
+                      font-family="'Inter',sans-serif" font-weight="700" font-size="20"
+                      fill="white">MS</text>
+              </svg>
+            </div>
+            <span class="label">Primary</span>
+          </div>
+          <div class="logo-variant">
+            <div class="logo-box" style="background:var(--charcoal);">
+              <svg width="28" height="28" viewBox="0 0 36 36" fill="none">
+                <text x="18" y="24" text-anchor="middle"
+                      font-family="'Inter',sans-serif" font-weight="700" font-size="20"
+                      fill="white">MS</text>
+              </svg>
+            </div>
+            <span class="label">Dark</span>
+          </div>
+          <div class="logo-variant">
+            <div class="logo-box" style="background:transparent; border:2px solid var(--purple);">
+              <svg width="28" height="28" viewBox="0 0 36 36" fill="none">
+                <text x="18" y="24" text-anchor="middle"
+                      font-family="'Inter',sans-serif" font-weight="700" font-size="20"
+                      fill="var(--purple)">MS</text>
+              </svg>
+            </div>
+            <span class="label">Outline</span>
+          </div>
+      </div>
+
+      <!-- Usage -->
+      <div class="guide-card">
+        <h3>Usage Guidelines</h3>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.6rem;">
+          <li style="display: flex; align-items: baseline; gap: 0.5rem;">
+            <span style="color:var(--purple);">→</span>
+            Always use Playfair Display for headings
+          </li>
+          <li style="display: flex; align-items: baseline; gap: 0.5rem;">
+            <span style="color:var(--purple);">→</span>
+            Purple (#6C5CE7) for primary actions &amp; links
+          </li>
+          <li style="display: flex; align-items: baseline; gap: 0.5rem;">
+            <span style="color:var(--purple);">→</span>
+            Teal (#A0D2DB) for backgrounds &amp; dividers
+          </li>
+          <li style="display: flex; align-items: baseline; gap: 0.5rem;">
+            <span style="color:var(--purple);">→</span>
+            Maintain generous whitespace
+          </li>
+        </ul>
+      </div>
+
+    <!-- Two-Line Summary -->
+    <div class="guide-two-liner">
+      <p><strong>Two-Line Style Guide</strong></p>
+      <p>
+        <strong>Fonts:</strong> Playfair Display (headings) · Inter (body) &nbsp;|&nbsp;
+        <strong>Colours:</strong> #2D3436 charcoal · #F8F9FA off-white · #6C5CE7 purple · #A0D2DB teal
+      </p>
+      <p style="opacity:0.7; font-size:0.9rem; margin-top:0.25rem;">
+        Monogram: MS in a rounded purple badge. Clean, calm, developer-first.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="container">
+    <p>Mussarat Shamsher &mdash; Personal Brand Identity Kit &middot; 2025</p>
+  </footer>
+
+</body>
+</html>

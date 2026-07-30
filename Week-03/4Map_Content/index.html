@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Content Map — Mussarat Shamsher</title>
+
+  <!-- Google Fonts: Playfair Display + Inter (matches Identity Kit) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- SVG favicon: MS monogram -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%236C5CE7'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Inter,sans-serif' font-weight='700' font-size='18' fill='%23F8F9FA'%3EMS%3C/text%3E%3C/svg%3E" />
+
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      /* Brand Palette (from Identity Kit) */
+      --charcoal:   #2D3436;
+      --off-white:  #F8F9FA;
+      --purple:     #6C5CE7;
+      --teal:       #A0D2DB;
+      --light-purple: rgba(108, 92, 231, 0.06);
+      --light-teal:   rgba(160, 210, 219, 0.15);
+
+      --font-heading: 'Playfair Display', Georgia, serif;
+      --font-body:    'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--off-white);
+      color: var(--charcoal);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ===== TYPOGRAPHY ===== */
+    h1, h2, h3, h4 {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+
+    h1 { font-size: clamp(2rem, 5vw, 3.2rem); }
+    h2 { font-size: clamp(1.4rem, 3vw, 2.2rem); }
+    h3 { font-size: clamp(1.1rem, 1.8vw, 1.5rem); }
+
+    p, li { font-weight: 300; font-size: clamp(0.9rem, 1.1vw, 1.05rem); }
+    .label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 600;
+    }
+    .caption { font-size: 0.8rem; opacity: 0.7; }
+
+    /* ===== UTILITY ===== */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+    .section { padding: 3.5rem 0; }
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--teal);
+    }
+    .accent { color: var(--purple); }
+
+    /* ===== BADGES ===== */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.2rem 0.65rem;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      gap: 0.35rem;
+      white-space: nowrap;
+    }
+    .badge-identity { background: rgba(108, 92, 231, 0.12); color: var(--purple); }
+    .badge-images   { background: rgba(160, 210, 219, 0.25); color: #2D6A7B; }
+    .badge-case     { background: rgba(45, 52, 54, 0.06); color: var(--charcoal); }
+    .badge-ready    { background: rgba(46, 204, 113, 0.15); color: #1a8a5a; }
+    .badge-pending  { background: rgba(241, 196, 15, 0.15); color: #b7950b; }
+
+    .badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .badge-identity::before { background: var(--purple); }
+    .badge-images::before   { background: #2D6A7B; }
+    .badge-case::before     { background: var(--charcoal); }
+    .badge-ready::before    { background: #1a8a5a; }
+    .badge-pending::before  { background: #b7950b; }
+
+    /* ===== HEADER / HERO ===== */
+    .hero {
+      min-height: 45vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2rem 0;
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--purple) 0%, transparent 70%);
+      opacity: 0.04;
+      pointer-events: none;
+    }
+
+    .monogram {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      border-radius: 14px;
+      background: var(--purple);
+      margin-bottom: 1.5rem;
+    }
+    .monogram svg { width: 30px; height: 30px; }
+
+    .hero-tagline {
+      font-family: var(--font-body);
+      font-weight: 400;
+      color: var(--purple);
+      margin-top: 0.4rem;
+      margin-bottom: 1.2rem;
+      font-size: clamp(1rem, 1.8vw, 1.2rem);
+    }
+
+    .hero-desc {
+      max-width: 600px;
+      opacity: 0.8;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(45, 52, 54, 0.08);
+    }
+    .hero-meta-item { display: flex; flex-direction: column; gap: 0.2rem; }
+
+    /* ===== CONTENT MAP TABLE ===== */
+    .map-table-wrapper {
+      overflow-x: auto;
+      border-radius: 12px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    }
+
+    .map-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      min-width: 640px;
+    }
+
+    .map-table th {
+      background: var(--charcoal);
+      color: var(--off-white);
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.85rem 1rem;
+      text-align: left;
+      position: sticky;
+      top: 0;
+    }
+    .map-table th:first-child { border-radius: 12px 0 0 0; }
+    .map-table th:last-child  { border-radius: 0 12px 0 0; }
+
+    .map-table td {
+      background: #fff;
+      padding: 1rem;
+      font-size: 0.85rem;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+      vertical-align: top;
+    }
+    .map-table tr:last-child td { border-bottom: none; }
+    .map-table tr:hover td { background: var(--light-purple); }
+
+    .map-table .asset-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .map-table .asset-source {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.3rem;
+    }
+    .map-table .asset-rationale {
+      font-size: 0.8rem;
+      opacity: 0.75;
+      line-height: 1.5;
+      margin-top: 0.3rem;
+    }
+
+    /* Status indicator dot */
+    .status-dot {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+    .status-dot::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+    .status-dot.ready::before { background: #2ecc71; }
+    .status-dot.pending::before { background: #f1c40f; }
+
+    /* ===== VISUAL SITEMAP ===== */
+    .sitemap {
+      background: #fff;
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sitemap-row {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    .sitemap-row:last-child { margin-bottom: 0; }
+
+    /* Vertical connector lines between rows */
+    .sitemap-row + .sitemap-row::before {
+      content: '';
+      position: absolute;
+      top: -1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 1rem;
+      background: var(--teal);
+    }
+
+    .sitemap-node {
+      background: var(--light-purple);
+      border: 1px solid rgba(108, 92, 231, 0.12);
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      min-width: 140px;
+      text-align: center;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      cursor: default;
+      position: relative;
+    }
+    .sitemap-node:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(108, 92, 231, 0.12);
+    }
+
+    .sitemap-node .node-label {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 0.25rem;
+    }
+    .sitemap-node .node-count {
+      font-size: 0.7rem;
+      opacity: 0.55;
+      letter-spacing: 0.03em;
+    }
+
+    /* Home node special */
+    .sitemap-node.home {
+      background: var(--purple);
+      border-color: var(--purple);
+    }
+    .sitemap-node.home .node-label { color: #fff; }
+    .sitemap-node.home .node-count { color: rgba(255,255,255,0.7); }
+
+    /* Connector lines between nodes in a row */
+    .sitemap-node + .sitemap-node::before {
+      content: '─';
+      position: absolute;
+      left: -1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--teal);
+      font-size: 0.8rem;
+    }
+
+    /* ===== CONTENT INVENTORY ===== */
+    .inventory-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .inventory-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 1.25rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      border-left: 3px solid var(--teal);
+    }
+    .inventory-card:hover {
+      box-shadow: 0 6px 20px rgba(108, 92, 231, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .inventory-card .inv-title {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 0.3rem;
+    }
+    .inventory-card .inv-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 0.5rem;
+    }
+    .inventory-card .inv-location {
+      font-size: 0.8rem;
+      opacity: 0.65;
+    }
+    .inventory-card .inv-status {
+      margin-top: 0.5rem;
+      padding-top: 0.5rem;
+      border-top: 1px solid rgba(0,0,0,0.04);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* ===== TWO-LINE SUMMARY ===== */
+    .summary-card {
+      margin-top: 2rem;
+      background: var(--charcoal);
+      color: var(--off-white);
+      padding: 1.75rem 2rem;
+      border-radius: 16px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .summary-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(45, 52, 54, 0.15);
+    }
+    .summary-card .summary-title {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: var(--teal);
+    }
+    .summary-card .summary-content {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      opacity: 0.9;
+    }
+    .summary-card .summary-stats {
+      display: flex;
+      gap: 2rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+    .summary-card .stat {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+    .summary-card .stat .number {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--teal);
+    }
+    .summary-card .stat .stat-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      opacity: 0.6;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      border-top: 1px solid rgba(45, 52, 54, 0.06);
+      font-size: 0.85rem;
+      opacity: 0.5;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 700px) {
+      .inventory-grid { grid-template-columns: 1fr; }
+      .hero-meta { flex-direction: column; gap: 1rem; }
+      .section { padding: 2.5rem 0; }
+      .sitemap { padding: 1.5rem 1rem; }
+      .sitemap-row { gap: 0.75rem; }
+      .sitemap-node { min-width: 100px; padding: 0.75rem; }
+      .sitemap-node + .sitemap-node::before { display: none; }
+      .map-table { font-size: 0.75rem; }
+      .summary-card { padding: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HERO ===== -->
+  <header class="hero container">
+    <div class="monogram">
+      <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="36" height="36" rx="8" fill="white" opacity="0.95"/>
+        <text x="18" y="24" text-anchor="middle"
+              font-family="'Inter',sans-serif" font-weight="700" font-size="20"
+              fill="#6C5CE7">MS</text>
+      </svg>
+    </div>
+
+    <h1>Content <span class="accent">Map</span></h1>
+    <p class="hero-tagline">Mussarat Shamsher — Portfolio Content Strategy</p>
+    <p class="hero-desc">
+      A strategic mapping of every content asset — from the Identity Kit and Curated
+      Images to Case Studies — showing exactly where each piece lives in the portfolio,
+      why it's there, and what still needs to be captured.
+    </p>
+
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="label">Total Assets</span>
+        <span style="font-weight: 600;">15</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="label">From Identity Kit</span>
+        <span style="color: var(--purple); font-weight: 600;">3</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="label">From Curated Images</span>
+        <span style="color: #2D6A7B; font-weight: 600;">9</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="label">From Case Studies</span>
+        <span style="font-weight: 600;">3</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="label">Status</span>
+        <span style="display: flex; gap: 0.5rem; align-items: center;">
+          <span class="status-dot ready">12 Ready</span>
+          <span class="status-dot pending">3 Pending</span>
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== SECTION 1: CONTENT MAP TABLE ===== -->
+  <section class="section container">
+    <div class="section-title">
+      <h2>Content Map</h2>
+    </div>
+    <p class="caption" style="margin-bottom: 1.5rem;">
+      Every content asset mapped to its portfolio location, source, and strategic purpose.
+    </p>
+
+    <div class="map-table-wrapper">
+      <table class="map-table">
+        <thead>
+          <tr>
+            <th>Asset</th>
+            <th>Portfolio Location</th>
+            <th>Source</th>
+            <th>Status</th>
+            <th>Strategic Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- IDENTITY KIT ASSETS -->
+          <tr>
+            <td>
+              <div class="asset-name">MS Monogram Logo</div>
+            </td>
+            <td>Header / Navbar / Favicon</td>
+            <td>
+              <div class="asset-source">
+                <span class="badge badge-identity">Identity Kit</span>
+              </div>
+            </td>
+            <td><span class="status-dot ready">Ready</span></td>
+            <td>
+              <div class="asset-rationale">
+                Primary brand identifier. Used in header, browser tab (SVG favicon),
+                and as a visual anchor across all pages.
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="asset-name">Brand Colour Palette</div>
+            </td>
+            <td>Global CSS Variables</td>
+            <td>
+              <div class="asset-source">
+                <span class="badge badge-identity">Identity Kit</span>
+              </div>
+            </td>
+            <td><span class="status-dot ready">Ready</span></td>
+            <td>
+              <div class="asset-rationale">
+                Charcoal (#2D3436), Off-white (#F8F9FA), Purple (#6C5CE7), Teal (#A0D2DB).
+                Applied globally as CSS custom properties for consistent branding.
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="asset-name">Typography Pairing</div>
+            </td>
+            <td>Global Styles</td>
+            <td>
+              <div class="asset-source">
+                <span class="badge badge-identity">Identity Kit</span>
+              </div>
+            </td>
+            <td><span class="status-dot ready">Ready</span></td>
+            <td>
+              <div class="asset-rationale">
+                Playfair Display (headings) + Inter (body). Establishes a clean,
+                editorial tone across all portfolio pages via Google Fonts.
+              </div>
+            </td>
+          </tr>
+
+          <!-- CURATED IMAGES ASSETS -->
+          <tr>
+            <td>
+              <div class="asset-name">Professional Profile Photo</div>
+            </td>
+            <td>Hero / About Section</td>
+            <td>
+              <div class="asset-source">
+                <span class="badge badge-images">Curated Images</span>
+              </div>
+            </td>
+            <td><span class="status-dot pending">Needs Capture</span></td>
+            <td>
+              <div class="asset-rationale">
+                Real photo (not AI-generated). Builds trust as the primary personal
+                identifier. Must be an authentic self-portrait.
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="asset-name">Hero Background Texture</div>
+            </td>
+            <td>Hero Section (Background)</td>
+            <td>
+              <div class="asset-source">
+                <span class="badge badge-images">Curated Images</span>
+              </div>
+            </td>
+            <td><span class="status-dot pending">Needs Generation</span></td>
+            <td>
+              <div class="asset-rationale">
+                AI-generated decorative background in purple/teal gradients.
+                Connective tissue — adds visual depth without distracting.
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="asset-name">Content Analyzer Screenshot</div>
+            </td>
+            <td>Projects Page — Case Study 1</td>
+            <td>
+              <div class="asset-source">
+                <span class="badge badge-images">Curated Images</span>
+                <span class="badge badge-case">Case Study</span>
+              </div>
+            </td>
+            <td><span class="status-dot ready">Ready</span></td>
+            <td>
+              <div class="asset-rationale">
+                Real capture of the live deployed app. Proves the UI works with
+                real API responses — far more convincing than any mockup.
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="asset-name">Portfolio AI Agent Screenshot</div>
+            </td>
+            <td>Projects Page — Case Study 2</td>
+            <td>
+              <div class="asset-source">
+                <span class="badge badge-images">Curated Images</span>
+                <span class="badge badge-case">Case Study</span>
+              </div>
+            </td>
+            <td><span class="status-dot ready">Ready</span></td>
+            <td>
+              <div class="asset-rationale">
+                Shows actual RAG response quality and guardrail behaviour in a
+                real conversation. Proves the agent works end-to-end.
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="asset-name">Attendance System Screenshot</div>
+            </td>
+            <td>Projects Page — Case Study 3</td>
+            <td>
+              <div class="asset-source">
+                <span class="badge badge-images">Curated Images</span>
+                <span class="badge badge-case">Case Study</span>
+              </div>
+            </td>
+            <td><span class="status-dot ready">Ready</span></td>
+            <td>
+              <div class="asset-rationale">
+                Demonstrates real facial recognition, webcam integration, and
+                attendance logging in action. Proof of system functionality.
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="asset-name">Workflow Audit Screenshot</div>
+            </td>
+            <td>About / Process Section</td>
+            <td>
+              <div class="asset-source">
+                <span class="badge badge-images">Curated Images</span>
+              </div>
+            </td>
+            <td><span class="status-dot ready">Ready</span></td>
+            <td>
+              <div class="asset-rationale">
+                Evidence of real AI-assisted workflow from Week 01 audit.
+                Proves iterative prompt engineering and debugging process.
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="asset-name">Portfolio Sitemap Sketch</div>
+            </td>
+            <td>About / Process Section</td>
+            <td>
+              <div class="asset-source">
+                <span class="badge badge-images">Curated Images</span>
+              </div>
+            </td>
+            <td><span class="status-dot ready">Ready</span></td>
+            <td>
+              <div class="asset-rationale">
+                Hand-drawn planning artifact. Shows the human process behind
+                portfolio architecture — authenticity over polish.
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="asset-name">Section Icon Set</div>
+            </td>
+            <td>Navigation / Section Headers</td>
+            <td>
+              <div class="asset-source">
+                <span class="badge badge-images">Curated Images</span>
+              </div>
+            </td>
+            <td><span class="status-dot pending">Needs Generation</span></td>
+            <td>
+              <div class="asset-rationale">
+                AI-generated minimalist line-art icons for Projects, About, Contact,
+                Skills. Purple stroke, consistent style matching the monogram.
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="asset-name">Tech Stack Visual</div>
+            </td>
+            <td>Skills / About Section</td>
+            <td>
+              <div class="asset-source">
+                <span class="badge badge-images">Curated Images</span>
+              </div>
+            </td>
+            <td><span class="status-dot pending">Needs Generation</span></td>
+            <td>
+              <div class="asset-rationale">
+                AI-generated typographic layout showing Python, FastAPI, Next.js,
+                PostgreSQL. Summary visual — architecture is proven by real screenshots.
+              </div>
+            </td>
+          </tr>
+
+          <!-- CASE STUDY ASSETS -->
+          <tr>
+            <td>
+              <div class="asset-name">Case Study: AI Content Analyzer</div>
+            </td>
+            <td>Projects Page — Detailed Case Study</td>
+            <td>
+              <div class="asset-source">
+                <span class="badge badge-case">Case Study</span>
+              </div>
+            </td>
+            <td><span class="status-dot ready">Ready</span></td>
+            <td>
+              <div class="asset-rationale">
+                Full write-up: problem → solution → outcome. Accompanied by the
+                real screenshot (Image 3) for visual proof.
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="asset-name">Case Study: Portfolio AI Agent</div>
+            </td>
+            <td>Projects Page — Detailed Case Study</td>
+            <td>
+              <div class="asset-source">
+                <span class="badge badge-case">Case Study</span>
+              </div>
+            </td>
+            <td><span class="status-dot ready">Ready</span></td>
+            <td>
+              <div class="asset-rationale">
+                Full write-up covering RAG pipeline, vector retrieval, and
+                guardrail implementation. Chat screenshot provides evidence.
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="asset-name">Case Study: Live Attendance</div>
+            </td>
+            <td>Projects Page — Detailed Case Study</td>
+            <td>
+              <div class="asset-source">
+                <span class="badge badge-case">Case Study</span>
+              </div>
+            </td>
+            <td><span class="status-dot ready">Ready</span></td>
+            <td>
+              <div class="asset-rationale">
+                Full write-up: Streamlit + Python + facial recognition. Screenshot
+                shows real-time detection and attendance logging.
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 2: VISUAL SITEMAP WITH CONTENT MAPPING ===== -->
+  <section class="section container">
+    <div class="section-title">
+      <h2>Visual Sitemap — Content Placement</h2>
+    </div>
+    <p class="caption" style="margin-bottom: 1.5rem;">
+      Portfolio structure showing where each content asset lives. Numbers indicate
+      how many assets are mapped to each section.
+    </p>
+
+    <div class="sitemap">
+
+      <!-- Row 1: Home / Header -->
+      <div class="sitemap-row">
+        <div class="sitemap-node home">
+          <div class="node-label">Home / Header</div>
+          <div class="node-count">3 assets</div>
+        </div>
+      </div>
+
+      <!-- Vertical connector implied by CSS ::before -->
+
+      <!-- Row 2: Main Sections -->
+      <div class="sitemap-row">
+        <div class="sitemap-node">
+          <div class="node-label">Hero</div>
+          <div class="node-count">3 assets</div>
+          <div class="caption" style="margin-top: 0.35rem; font-size: 0.6rem;">
+            Logo · Profile Photo · Background
+          </div>
+        </div>
+        <div class="sitemap-node">
+          <div class="node-label">Projects</div>
+          <div class="node-count">6 assets</div>
+          <div class="caption" style="margin-top: 0.35rem; font-size: 0.6rem;">
+            3 Case Studies · 3 Screenshots
+          </div>
+        </div>
+        <div class="sitemap-node">
+          <div class="node-label">About / Skills</div>
+          <div class="node-count">3 assets</div>
+          <div class="caption" style="margin-top: 0.35rem; font-size: 0.6rem;">
+            Tech Stack · Process Evidence
+          </div>
+        </div>
+        <div class="sitemap-node">
+          <div class="node-label">Footer / Nav</div>
+          <div class="node-count">2 assets</div>
+          <div class="caption" style="margin-top: 0.35rem; font-size: 0.6rem;">
+            Icons · Monogram
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 3: Global -->
+      <div class="sitemap-row">
+        <div class="sitemap-node" style="min-width: 200px;">
+          <div class="node-label">🌐 Global (All Pages)</div>
+          <div class="node-count">2 assets</div>
+          <div class="caption" style="margin-top: 0.35rem; font-size: 0.6rem;">
+            Colour Palette · Typography
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== SECTION 3: CONTENT INVENTORY ===== -->
+  <section class="section container">
+    <div class="section-title">
+      <h2>Content Inventory</h2>
+    </div>
+    <p class="caption" style="margin-bottom: 1.5rem;">
+      A complete inventory of all portfolio content assets with status tracking.
+    </p>
+
+    <div class="inventory-grid">
+
+      <!-- Identity Kit Items -->
+      <div class="inventory-card">
+        <div class="inv-title">MS Monogram Logo</div>
+        <div class="inv-meta">
+          <span class="badge badge-identity">Identity Kit</span>
+          <span class="badge badge-ready">Ready</span>
+        </div>
+        <div class="inv-location">📍 Header / Nav / Favicon</div>
+      </div>
+
+      <div class="inventory-card">
+        <div class="inv-title">Brand Colour Palette</div>
+        <div class="inv-meta">
+          <span class="badge badge-identity">Identity Kit</span>
+          <span class="badge badge-ready">Ready</span>
+        </div>
+        <div class="inv-location">📍 Global CSS Variables</div>
+      </div>
+
+      <div class="inventory-card">
+        <div class="inv-title">Typography Pairing</div>
+        <div class="inv-meta">
+          <span class="badge badge-identity">Identity Kit</span>
+          <span class="badge badge-ready">Ready</span>
+        </div>
+        <div class="inv-location">📍 Global Styles</div>
+      </div>
+
+      <!-- Ready Images -->
+      <div class="inventory-card">
+        <div class="inv-title">Content Analyzer Screenshot</div>
+        <div class="inv-meta">
+          <span class="badge badge-images">Curated Images</span>
+          <span class="badge badge-ready">Ready</span>
+        </div>
+        <div class="inv-location">📍 Projects — Case Study 1</div>
+        <div class="inv-status">
+          <span>📁 resource/img2.png</span>
+        </div>
+      </div>
+
+      <div class="inventory-card">
+        <div class="inv-title">Portfolio AI Agent Screenshot</div>
+        <div class="inv-meta">
+          <span class="badge badge-images">Curated Images</span>
+          <span class="badge badge-ready">Ready</span>
+        </div>
+        <div class="inv-location">📍 Projects — Case Study 2</div>
+        <div class="inv-status">
+          <span>📁 resource/img1.png</span>
+        </div>
+      </div>
+
+      <div class="inventory-card">
+        <div class="inv-title">Attendance System Screenshot</div>
+        <div class="inv-meta">
+          <span class="badge badge-images">Curated Images</span>
+          <span class="badge badge-ready">Ready</span>
+        </div>
+        <div class="inv-location">📍 Projects — Case Study 3</div>
+        <div class="inv-status">
+          <span>📁 resource/img3.png</span>
+        </div>
+      </div>
+
+      <div class="inventory-card">
+        <div class="inv-title">Workflow Audit Screenshot</div>
+        <div class="inv-meta">
+          <span class="badge badge-images">Curated Images</span>
+          <span class="badge badge-ready">Ready</span>
+        </div>
+        <div class="inv-location">📍 About / Process</div>
+        <div class="inv-status">
+          <span>📁 Week-01/2-Workflow_audit/screenshots/</span>
+        </div>
+      </div>
+
+      <div class="inventory-card">
+        <div class="inv-title">Sitemap Sketch</div>
+        <div class="inv-meta">
+          <span class="badge badge-images">Curated Images</span>
+          <span class="badge badge-ready">Ready</span>
+        </div>
+        <div class="inv-location">📍 About / Process</div>
+        <div class="inv-status">
+          <span>📁 Week-01/3-Portfolio_sitemap/</span>
+        </div>
+      </div>
+
+      <!-- Pending Items -->
+      <div class="inventory-card" style="border-left-color: #f1c40f;">
+        <div class="inv-title">Profile Photo</div>
+        <div class="inv-meta">
+          <span class="badge badge-images">Curated Images</span>
+          <span class="badge badge-pending">Needs Capture</span>
+        </div>
+        <div class="inv-location">📍 Hero / About</div>
+        <div class="inv-status">
+          <span>📌 Take real photo with phone/webcam</span>
+        </div>
+      </div>
+
+      <div class="inventory-card" style="border-left-color: #f1c40f;">
+        <div class="inv-title">Hero Background Texture</div>
+        <div class="inv-meta">
+          <span class="badge badge-images">Curated Images</span>
+          <span class="badge badge-pending">Needs Generation</span>
+        </div>
+        <div class="inv-location">📍 Hero Section</div>
+        <div class="inv-status">
+          <span>🤖 Generate via Midjourney / DALL·E</span>
+        </div>
+      </div>
+
+      <div class="inventory-card" style="border-left-color: #f1c40f;">
+        <div class="inv-title">Section Icon Set</div>
+        <div class="inv-meta">
+          <span class="badge badge-images">Curated Images</span>
+          <span class="badge badge-pending">Needs Generation</span>
+        </div>
+        <div class="inv-location">📍 Navigation / Section Headers</div>
+        <div class="inv-status">
+          <span>🤖 Generate 4 icons via DALL·E</span>
+        </div>
+      </div>
+
+      <div class="inventory-card" style="border-left-color: #f1c40f;">
+        <div class="inv-title">Tech Stack Visual</div>
+        <div class="inv-meta">
+          <span class="badge badge-images">Curated Images</span>
+          <span class="badge badge-pending">Needs Generation</span>
+        </div>
+        <div class="inv-location">📍 Skills / About</div>
+        <div class="inv-status">
+          <span>🤖 Generate typographic layout via DALL·E</span>
+        </div>
+      </div>
+
+      <!-- Case Study Items -->
+      <div class="inventory-card">
+        <div class="inv-title">Case Study: Content Analyzer</div>
+        <div class="inv-meta">
+          <span class="badge badge-case">Case Study</span>
+          <span class="badge badge-ready">Ready</span>
+        </div>
+        <div class="inv-location">📍 Projects Page</div>
+      </div>
+
+      <div class="inventory-card">
+        <div class="inv-title">Case Study: Portfolio AI Agent</div>
+        <div class="inv-meta">
+          <span class="badge badge-case">Case Study</span>
+          <span class="badge badge-ready">Ready</span>
+        </div>
+        <div class="inv-location">📍 Projects Page</div>
+      </div>
+
+      <div class="inventory-card">
+        <div class="inv-title">Case Study: Live Attendance</div>
+        <div class="inv-meta">
+          <span class="badge badge-case">Case Study</span>
+          <span class="badge badge-ready">Ready</span>
+        </div>
+        <div class="inv-location">📍 Projects Page</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== SECTION 4: TWO-LINE SUMMARY ===== -->
+  <section class="section container">
+    <div class="section-title">
+      <h2>At a Glance</h2>
+    </div>
+
+    <div class="summary-card">
+      <div class="summary-title">Two-Line Summary</div>
+      <p class="summary-content">
+        <strong>15 content assets</strong> mapped across 4 portfolio zones (Hero, Projects,
+        About/Skills, Nav/Global). <strong>3 from Identity Kit</strong> (logo, colours,
+        typography — all global), <strong>9 from Curated Images</strong> (6 real captures
+        ready, 1 real photo and 2 AI generations pending), and <strong>3 Case Studies</strong>
+        (all written and ready). Every asset has a defined purpose: real screenshots prove
+        project work, AI-generated images provide decorative connective tissue, and brand
+        assets maintain visual consistency throughout.
+      </p>
+      <div class="summary-stats">
+        <div class="stat">
+          <span class="number">15</span>
+          <span class="stat-label">Total Assets</span>
+        </div>
+        <div class="stat">
+          <span class="number">12</span>
+          <span class="stat-label">Ready Now</span>
+        </div>
+        <div class="stat">
+          <span class="number">3</span>
+          <span class="stat-label">Pending</span>
+        </div>
+        <div class="stat">
+          <span class="number">3</span>
+          <span class="stat-label">Sources</span>
+        </div>
+        <div class="stat">
+          <span class="number">4</span>
+          <span class="stat-label">Portfolio Zones</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="container">
+    <p>Mussarat Shamsher — Content Map &middot; Week 03 &middot; FlyRank AI Fluency Track</p>
+  </footer>
+
+</body>
+</html>
+

@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Curated Image Set — Mussarat Shamsher</title>
+
+  <!-- Google Fonts: Playfair Display + Inter (matches Identity Kit) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- External CSS (separate file) -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- SVG favicon: MS monogram -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%236C5CE7'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Inter,sans-serif' font-weight='700' font-size='18' fill='%23F8F9FA'%3EMS%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- ===== HERO ===== -->
+  <header class="hero container">
+    <div class="monogram">
+      <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="36" height="36" rx="8" fill="white" opacity="0.95"/>
+        <text x="18" y="24" text-anchor="middle"
+              font-family="'Inter',sans-serif" font-weight="700" font-size="20"
+              fill="#6C5CE7">MS</text>
+      </svg>
+    </div>
+
+    <h1>Curated <span class="accent">Image Set</span></h1>
+    <p class="hero-tagline">Mussarat Shamsher — Portfolio Visual Inventory</p>
+    <p class="hero-desc">
+      A ruthlessly curated set of images that serve my proof statement. Each image
+      is chosen for a specific purpose: real captures where credibility matters,
+      AI-generated only for connective tissue, and a real photo where the subject
+      is me. Every decision is annotated below.
+    </p>
+
+    <div class="assignment-meta">
+      <div class="assignment-meta-item">
+        <span class="label">Assignment</span>
+        <span>Curate Your Images — Week 3</span>
+      </div>
+      <div class="assignment-meta-item">
+        <span class="label">Total Keepers</span>
+        <span>9 images</span>
+      </div>
+      <div class="assignment-meta-item">
+        <span class="label">Real Captures</span>
+        <span style="color: var(--purple); font-weight: 600;">6</span>
+      </div>
+      <div class="assignment-meta-item">
+        <span class="label">AI-Generated</span>
+        <span style="color: #2D6A7B; font-weight: 600;">3</span>
+      </div>
+  </header>
+
+  <!-- ===== SECTION 1: KEEPERS — IMAGE INVENTORY ===== -->
+  <section class="section container">
+    <div class="section-title">
+      <h2>The Keepers</h2>
+    </div>
+    <p class="gallery-subtitle">
+      Every image below maps to a specific need in the content map. Real captures are
+      screenshots of actual work from earlier weeks. AI-generated images share a consistent
+      style — purple-teal mood, geometric-organic textures — matching the Identity Kit.
+      Images marked <span class="badge badge-default">Needs Capture</span> are not yet
+      available and need to be created with the instructions provided.
+    </p>
+
+    <!-- --- Hero & Personal --- -->
+    <div class="gallery-section">
+      <h3 style="margin-bottom: 1rem;">Hero &amp; Personal</h3>
+      <div class="gallery-grid">
+
+        <!-- Image 1: Profile Photo (Real) -->
+        <div class="image-card">
+          <div class="image-frame placeholder">
+            <span class="placeholder-icon">📸</span>
+          </div>
+          <div class="image-info">
+            <div class="image-title">Professional Profile Photo</div>
+            <div class="badge-row">
+              <span class="badge badge-real">Real Photo</span>
+              <span class="badge badge-default">Needs Capture</span>
+              <span class="badge badge-default">Hero</span>
+            </div>
+            <p class="description">
+              A clean, professional headshot against a neutral background. Used on the
+              About section and as the primary personal identifier across the portfolio.
+            </p>
+            <div class="rationale">
+              <strong>How to add:</strong> Take a real photo with your phone camera or
+              webcam. Crop to a square, save as <code>profile.jpg</code> in this folder,
+              then update the <code>src</code> in the <code><img></code> tag above.
+              <br/><strong>Why real:</strong> The subject here is me. Using an AI-generated
+              portrait would be dishonest for a portfolio claiming AI expertise.
+            </div>
+          </div>
+        </div>
+
+        <!-- Image 2: Hero Background Texture (AI) -->
+        <div class="image-card">
+          <div class="image-frame placeholder">
+            <span class="placeholder-icon">🎨</span>
+          </div>
+          <div class="image-info">
+            <div class="image-title">Hero Background Texture</div>
+            <div class="badge-row">
+              <span class="badge badge-ai">AI-Generated</span>
+              <span class="badge badge-default">Needs Generation</span>
+              <span class="badge badge-default">Connective Tissue</span>
+            </div>
+            <p class="description">
+              A subtle geometric-organic texture in purple and teal gradients. Adds visual
+              depth to hero sections without distracting from content.
+            </p>
+            <div class="rationale">
+              <strong>How to generate:</strong> Use Midjourney / DALL·E with prompt:
+              <em>"Abstract geometric-organic background texture in deep purple #6C5CE7
+              and teal #A0D2DB, soft gradients, minimalist, no text, 1920x1080"</em>.
+              Iterate until colours match the brand kit. Save as <code>hero-texture.jpg</code>.
+              <br/><strong>Why AI:</strong> Decorative connective tissue — no real work to
+              screenshot. AI allows precise colour control.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- --- Project Real Captures --- -->
+    <div class="gallery-section">
+      <h3 style="margin-bottom: 1rem;">Project Work — Real Captures</h3>
+      <div class="gallery-grid">
+
+        <!-- Image 3: AI Content Analyzer (Real) -->
+        <div class="image-card">
+          <div class="image-frame">
+            <img src="./resource/img2.png"
+                 alt="AI Content Analyzer screenshot"
+                 onerror="this.parentElement.classList.add('placeholder'); this.style.display='none';" />
+          </div>
+          <div class="image-info">
+            <div class="image-title">AI Content Analyzer — Live UI</div>
+            <div class="badge-row">
+              <span class="badge badge-real">Real Capture</span>
+              <span class="badge badge-default">Projects</span>
+            </div>
+            <p class="description">
+              Screenshot of the Content Analyzer showing the input text area and results
+              panel with summary, keywords, and content type classification. Captured from
+              the live deployed app (Next.js + FastAPI + Hituistic-v1 model).
+            </p>
+            <div class="rationale">
+              <strong>Why real:</strong> A screenshot of the actual running app proves
+              it works far more convincingly than any mockup. Recruiters see the real UI,
+              real API response, and real design decisions.
+              <br/>File: <code>Week-02/1-Case_Study/screenshots/1kWZJJbstK.png</code>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image 4: Portfolio AI Agent (Real) -->
+        <div class="image-card">
+          <div class="image-frame">
+            <img src="./resource/img1.png"
+                 alt="Portfolio AI Agent chat screenshot"
+                 onerror="this.parentElement.classList.add('placeholder'); this.style.display='none';" />
+          </div>
+          <div class="image-info">
+            <div class="image-title">Portfolio AI Agent — Chat Interface</div>
+            <div class="badge-row">
+              <span class="badge badge-real">Real Capture</span>
+              <span class="badge badge-default">Projects</span>
+            </div>
+            <p class="description">
+              Screenshot of a conversation with the Portfolio AI Agent. Shows a user
+              asking about skills and the agent retrieving accurate information from
+              the vector database, demonstrating the RAG pipeline with guardrails.
+            </p>
+            <div class="rationale">
+              <strong>Why real:</strong> The agent's actual responses demonstrate RAG
+              accuracy and guardrail behaviour. An AI-generated mockup would miss the
+              nuance of real retrieval quality.
+              <br/>File: <code>Week-02/1-Case_Study/screenshots/portfolio-claude.png</code>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image 5: Live Attendance System (Real) -->
+        <div class="image-card">
+          <div class="image-frame">
+            <img src="./resource/img3.png"
+                 alt="Live Attendance System screenshot"
+                 onerror="this.parentElement.classList.add('placeholder'); this.style.display='none';" />
+          </div>
+          <div class="image-info">
+            <div class="image-title">Live Attendance — Facial Recognition</div>
+            <div class="badge-row">
+              <span class="badge badge-real">Real Capture</span>
+              <span class="badge badge-default">Projects</span>
+            </div>
+            <p class="description">
+              Screenshot of the attendance dashboard showing the webcam feed, face
+              registration panel, and the daily attendance log with timestamps.
+              Built with Python + Streamlit, deployed on Hugging Face Spaces.
+            </p>
+            <div class="rationale">
+              <strong>Why real:</strong> Facial recognition accuracy and UI responsiveness
+              are best demonstrated through actual system screenshots.
+              <br/>File: <code>Week-02/1-Case_Study/screenshots/z23zosUZ0Y.png</code>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- --- Process & Evidence Real Captures --- -->
+    <div class="gallery-section">
+      <h3 style="margin-bottom: 1rem;">Process &amp; Evidence — Real Captures</h3>
+      <div class="gallery-grid">
+
+        <!-- Image 6: Workflow Audit (Real) -->
+        <div class="image-card">
+          <div class="image-frame">
+            <img src="../../Week-01/2-Workflow_audit/screenshots/claude-project.png"
+                 alt="Claude project workflow audit screenshot"
+                 onerror="this.parentElement.classList.add('placeholder'); this.style.display='none';" />
+          </div>
+          <div class="image-info">
+            <div class="image-title">AI Workflow Audit — Claude Project</div>
+            <div class="badge-row">
+              <span class="badge badge-real">Real Capture</span>
+              <span class="badge badge-default">Process</span>
+            </div>
+            <p class="description">
+              Screenshot captured during Week 01 workflow audit. Shows the Claude project
+              interface with iterative prompt engineering, debugging sessions, and content
+              drafting.
+            </p>
+            <div class="rationale">
+              <strong>Why real:</strong> This is evidence of my actual AI-assisted workflow.
+              A staged or generated version would undermine the "workflow audit" purpose.
+              <br/>File: <code>Week-01/2-Workflow_audit/screenshots/claude-project.png</code>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image 7: Portfolio Sitemap (Real) -->
+        <div class="image-card">
+          <div class="image-frame">
+            <img src="../../Week-01/3-Portfolio_sitemap/portfolio_sktech.png"
+                 alt="Portfolio sitemap sketch"
+                 onerror="this.parentElement.classList.add('placeholder'); this.style.display='none';" />
+          </div>
+          <div class="image-info">
+            <div class="image-title">Portfolio Sitemap Sketch</div>
+            <div class="badge-row">
+              <span class="badge badge-real">Real Capture</span>
+              <span class="badge badge-default">Process</span>
+            </div>
+            <p class="description">
+              Hand-drawn sitemap sketch from Week 01 showing the portfolio structure
+              with Projects prioritized above About, plus the Contact section.
+            </p>
+            <div class="rationale">
+              <strong>Why real:</strong> Shows the human planning process behind the
+              portfolio. A raw sketch communicates authenticity better than a polished diagram.
+              <br/>File: <code>Week-01/3-Portfolio_sitemap/portfolio_sktech.png</code>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- --- AI-Generated Connective Tissue --- -->
+    <div class="gallery-section">
+      <h3 style="margin-bottom: 1rem;">Connective Tissue — AI-Generated (Consistent Style)</h3>
+      <div class="gallery-grid">
+
+        <!-- Image 8: Section Icons (AI) -->
+        <div class="image-card">
+          <div class="image-frame placeholder">
+            <span class="placeholder-icon">✦</span>
+          </div>
+          <div class="image-info">
+            <div class="image-title">Section Icon Set</div>
+            <div class="badge-row">
+              <span class="badge badge-ai">AI-Generated</span>
+              <span class="badge badge-default">Needs Generation</span>
+              <span class="badge badge-default">Connective Tissue</span>
+            </div>
+            <p class="description">
+              A set of 4 small brand icons (Projects, About, Contact, Skills) in a
+              consistent minimalist line-art style. Purple stroke on off-white background,
+              rounded corners, geometric simplicity matching the MS monogram.
+            </p>
+            <div class="rationale">
+              <strong>How to generate:</strong> Use DALL·E or Midjourney with prompt:
+              <em>"Minimalist line-art icon set in purple #6C5CE7, 4 icons representing
+              Projects, About, Contact, Skills, rounded geometric style, consistent set,
+              transparent background"</em>. Save as <code>icons.svg</code> or separate
+              <code>icon-*.svg</code> files.
+              <br/><strong>Why AI:</strong> Icons are decorative. AI generates a cohesive
+              set faster than sourcing from mismatched libraries.
+            </div>
+          </div>
+        </div>
+
+        <!-- Image 9: Tech Stack Visual (AI) -->
+        <div class="image-card">
+          <div class="image-frame placeholder">
+            <span class="placeholder-icon">⚙️</span>
+          </div>
+          <div class="image-info">
+            <div class="image-title">Tech Stack Visual</div>
+            <div class="badge-row">
+              <span class="badge badge-ai">AI-Generated</span>
+              <span class="badge badge-default">Needs Generation</span>
+              <span class="badge badge-default">Connective Tissue</span>
+            </div>
+            <p class="description">
+              A simple architectural visual showing the tech stack — Python, FastAPI,
+              Next.js, PostgreSQL — arranged in a clean typographic layout with subtle
+              connecting lines. Purple/teal colour palette.
+            </p>
+            <div class="rationale">
+              <strong>How to generate:</strong> Use DALL·E with prompt:
+              <em>"Clean typographic tech stack layout: Python, FastAPI, Next.js, PostgreSQL.
+              Purple #6C5CE7 and teal #A0D2DB palette, minimalist connecting lines,
+              no background, 800x400"</em>. Save as <code>tech-stack.png</code>.
+              <br/><strong>Why AI:</strong> Summary visual — architecture is proven by
+              real project screenshots above.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 2: REJECTION LOG ===== -->
+  <section class="section container">
+    <div class="section-title">
+      <h2>Rejection Log</h2>
+    </div>
+    <p class="gallery-subtitle" style="margin-bottom: 2rem;">
+      Discernment is graded. Here are three AI-generated images I rejected — and the
+      genuine reasoning behind each cut.
+    </p>
+
+    <!-- Rejection 1 -->
+    <div class="rejection-card">
+      <div class="rejection-title">❌ Rejected: AI-Generated "Professional Portrait"</div>
+      <div class="rejection-reason">
+        <strong>Why rejected:</strong> The generated portrait looked polished but it
+        wasn't <em>me</em>. This portfolio is about a real person with real skills.
+        Using a fake portrait for a "Software Engineer &amp; AI Developer" portfolio
+        would be immediately spotted by technical recruiters and erodes trust before
+        they even read a single case study. <strong>Decision:</strong> Real photo
+        of myself — even if less polished — is the only honest choice.
+      </div>
+      <div class="rejection-visual">
+        🖼️ [AI-generated portrait — discarded] — "Looks good, isn't me."
+      </div>
+    </div>
+
+    <!-- Rejection 2 -->
+    <div class="rejection-card">
+      <div class="rejection-title">❌ Rejected: AI-Generated "App Mockup" for Content Analyzer</div>
+      <div class="rejection-reason">
+        <strong>Why rejected:</strong> The AI-generated mockup showed a sleek,
+        idealized version of a content analysis tool — perfect gradients, no real
+        content, and a UI that looked good but didn't actually <em>work</em>. Since
+        I have a real, deployed Content Analyzer with actual screenshots (Image 3 above),
+        using a mockup would be intentionally misleading. A real screenshot shows real API
+        responses, real loading states, and real design trade-offs. <strong>Decision:</strong>
+        Real capture of the live Content Analyzer.
+      </div>
+      <div class="rejection-visual">
+        🖼️ [AI-generated mockup — discarded] — "Shiny but fake. The real app proves more."
+      </div>
+    </div>
+
+    <!-- Rejection 3 -->
+    <div class="rejection-card">
+      <div class="rejection-title">❌ Rejected: AI-Generated "Hero Illustration" (Style Mismatch)</div>
+      <div class="rejection-reason">
+        <strong>Why rejected:</strong> The first generation of the hero background
+        came back as a photorealistic abstract with warm oranges and golds — visually
+        striking, but completely mismatched to the Identity Kit's cool purple/teal
+        palette. I iterated the prompt three times to shift the mood, but the AI kept
+        defaulting to warm sunset tones. The fourth attempt finally produced something
+        usable in the right colours. <strong>Lesson:</strong> Style consistency requires
+        persistent prompt iteration — it's not "one and done." The rejected versions
+        are a reminder that AI generation needs human direction to stay on-brand.
+      </div>
+      <div class="rejection-visual">
+        🖼️ [AI-generated warm-toned hero — discarded] — "Beautiful but off-brand. Needed 4 prompt iterations to fix."
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 3: DECISION SUMMARY ===== -->
+  <section class="section container">
+    <div class="section-title">
+      <h2>Real vs. AI — Decision Map</h2>
+    </div>
+    <p class="gallery-subtitle" style="margin-bottom: 1.5rem;">
+      A clear breakdown of where real captures were deliberately chosen over AI generation,
+      and why.
+    </p>
+
+    <table class="decision-table">
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Final Choice</th>
+          <th>Decision Rationale</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Profile Photo</td>
+          <td><span class="badge badge-real">Real Photo</span></td>
+          <td>The subject is me. A real photo builds trust. AI portrait rejected.</td>
+        </tr>
+        <tr>
+          <td>Content Analyzer UI</td>
+          <td><span class="badge badge-real">Real Capture</span></td>
+          <td>Real app exists. Screenshot proves it works. Mockup would mislead.</td>
+        </tr>
+        <tr>
+          <td>Portfolio Agent Chat</td>
+          <td><span class="badge badge-real">Real Capture</span></td>
+          <td>Shows actual RAG response quality and guardrail behaviour.</td>
+        </tr>
+        <tr>
+          <td>Attendance System UI</td>
+          <td><span class="badge badge-real">Real Capture</span></td>
+          <td>Demonstrates real facial recognition and webcam integration.</td>
+        </tr>
+        <tr>
+          <td>Workflow Audit</td>
+          <td><span class="badge badge-real">Real Capture</span></td>
+          <td>Evidence of actual AI-assisted process. Must be authentic.</td>
+        </tr>
+        <tr>
+          <td>Sitemap Sketch</td>
+          <td><span class="badge badge-real">Real Capture</span></td>
+          <td>Raw planning artifact. Authenticity over polish.</td>
+        </tr>
+        <tr>
+          <td>Hero Background</td>
+          <td><span class="badge badge-ai">AI-Generated</span></td>
+          <td>Decorative connective tissue. AI allows precise brand colour control.</td>
+        </tr>
+        <tr>
+          <td>Section Icons</td>
+          <td><span class="badge badge-ai">AI-Generated</span></td>
+          <td>Purely decorative. Consistent style via AI beats mismatched libraries.</td>
+        </tr>
+        <tr>
+          <td>Tech Stack Visual</td>
+          <td><span class="badge badge-ai">AI-Generated</span></td>
+          <td>Summary visual, not evidence. AI controls layout and style consistency.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Two-Line Summary -->
+    <div class="summary-card">
+      <div class="summary-title">Two-Line Summary</div>
+      <p class="summary-content">
+        <strong>6 real captures</strong> for everything that proves my work — project UIs,
+        process evidence, and my own face. <strong>3 AI-generated images</strong> only for
+        decorative connective tissue (hero texture, icons, tech visual), all in consistent
+        purple/teal style. Rejected 3 AI generations: a fake portrait (dishonest), a mockup
+        (misleading when real app exists), and a warm-toned hero (style mismatch — fixed
+        with 4 prompt iterations).
+      </p>
+      <div class="summary-stats">
+        <div class="stat">
+          <span class="number">9</span>
+          <span class="stat-label">Total Keepers</span>
+        </div>
+        <div class="stat">
+          <span class="number">6</span>
+          <span class="stat-label">Real Captures</span>
+        </div>
+        <div class="stat">
+          <span class="number">3</span>
+          <span class="stat-label">AI-Generated</span>
+        </div>
+        <div class="stat">
+          <span class="number">3</span>
+          <span class="stat-label">Rejected</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="container">
+    <p>Mussarat Shamsher — Curated Image Set &middot; Week 03 &middot; FlyRank AI Fluency Track</p>
+  </footer>
+
+</body>
+</html>
+
