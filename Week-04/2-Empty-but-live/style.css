@@ -1,0 +1,95 @@
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  /* Identity Kit palette */
+  --charcoal:  #2D3436;
+  --off-white: #F8F9FA;
+  --purple:    #6C5CE7;
+  --teal:      #A0D2DB;
+
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body:    'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--off-white);
+  color: var(--charcoal);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== STAGE ===== */
+.stage {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  position: relative;
+}
+
+.stage::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--purple) 0%, transparent 70%);
+  opacity: 0.04;
+  pointer-events: none;
+}
+
+/* ===== MONOGRAM ===== */
+.monogram {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 16px;
+  background: var(--purple);
+  margin-bottom: 1.75rem;
+}
+.monogram svg { width: 36px; height: 36px; }
+
+/* ===== NAME ===== */
+.name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(2.2rem, 6vw, 3.5rem);
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+.accent { color: var(--purple); }
+
+/* ===== TAGLINE ===== */
+.tagline {
+  font-weight: 400;
+  color: var(--purple);
+  margin-top: 0.5rem;
+  font-size: clamp(1rem, 2.4vw, 1.25rem);
+}
+
+/* ===== STATUS ===== */
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2.25rem;
+  padding: 0.45rem 1rem;
+  border-radius: 20px;
+  background: rgba(108, 92, 231, 0.08);
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--charcoal);
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2ecc71;
+  flex-shrink: 0;
+}

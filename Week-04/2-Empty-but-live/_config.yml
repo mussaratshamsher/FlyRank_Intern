@@ -1,0 +1,3 @@
+# GitHub Pages — publish directly from the root of the repo
+include:
+  - .nojekyll
