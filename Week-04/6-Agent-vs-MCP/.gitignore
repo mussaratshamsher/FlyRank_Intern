@@ -1,0 +1,10 @@
+# Virtual environment
+.venv/
+venv/
+
+# Install / setup logs
+install_log.txt
+
+# Python caches
+__pycache__/
+*.py[cod]
